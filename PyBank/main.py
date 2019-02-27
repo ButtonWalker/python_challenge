@@ -28,27 +28,27 @@ with open(csvPath,newline='') as csvFile:
 
         monthCount = monthCount + 1
         row = rows[m]
-        revSum = int(row[1]) + revSum
+        revSum = float(row[1]) + revSum
 
         if m > 1:
-            revDiffernce = revDiffernce + int(row[1]) - int(rows[m-1][1])
+            revDiffernce = revDiffernce + float(row[1]) - float(rows[m-1][1])
 
         # Max Revenue
-        if int(max_month[1]) < int(row[1]):
+        if int(max_month[1]) < float(row[1]):
             max_month = row
         # Min Revenue
-        if int(min_month[1]) > int(row[1]):
+        if int(min_month[1]) > float(row[1]):
             min_month = row
 
 # Revenue Average and Change Average calculations
-aveRev = int(revSum / monthCount)
-aveChange = int(revDiffernce / monthCount)
+aveRev = float(revSum / monthCount)
+aveChange = float(revDiffernce / monthCount)
 
 # Terminal output
 print(' Financial Analysis ')
 print('--------------------')
 print(f'Total Months: {monthCount}')
-print(F'Total Revenue: ${revSum}')
-print(f'Average Change: {aveRev}')
+print(f'Total Revenue: {revSum:.2f}')
+print(f'Average Change: {aveRev:.2f}')
 
 
