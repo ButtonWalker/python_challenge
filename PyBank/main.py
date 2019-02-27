@@ -40,11 +40,15 @@ with open(csvPath,newline='') as csvFile:
         if int(min_month[1]) > int(row[1]):
             min_month = row
 
+# Revenue Average and Change Average calculations
 aveRev = int(revSum / monthCount)
 aveChange = int(revDiffernce / monthCount)
 
-print(monthCount)
-print(revSum)
-print(aveChange)
-print(aveRev)
+# Terminal output
+print(' Financial Analysis ')
+print('--------------------')
+print(f'Total Months: {monthCount}')
+print(F'Total Revenue: ${revSum}')
+print(f'Average Change: {aveRev}')
+
 
