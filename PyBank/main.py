@@ -24,6 +24,7 @@ with open(csvPath,newline='') as csvFile:
 
     # parse through data set using for loop
     for m in range(1,len(rows)):
+    #for m in csvReader: this did not work! line above works
 
         monthCount = monthCount + 1
         row = rows[m]
