@@ -44,11 +44,19 @@ with open(csvPath,newline='') as csvFile:
 aveRev = float(revSum / monthCount)
 aveChange = float(revDiffernce / monthCount)
 
+# Convert Values from List to string
+monthMin = ' '.join(min_month)
+monthMax = ' '.join(max_month)
+
 # Terminal output
 print(' Financial Analysis ')
 print('--------------------')
 print(f'Total Months: {monthCount}')
-print(f'Total Revenue: {revSum:.2f}')
-print(f'Average Change: {aveRev:.2f}')
+# formated to have 2 digits trailing
+print(f'Total Revenue: ${revSum:.2f}')
+print(f'Average Change: ${aveRev:.2f}')
+# change format to ensure List read correctly
+print('Greatest Increase:' +' '+ monthMax)
+print('Greatest Decrease:' +' '+ monthMin)
 
 
