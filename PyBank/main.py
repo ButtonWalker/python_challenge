@@ -23,6 +23,27 @@ with open(csvPath,newline='') as csvFile:
     min_month = rows[1]
 
     # parse through data set using for loop
-    #for i in range(1,len(rows)):
-    print(max_month)
-    print(min_month)
+    for m in range(1,len(rows)):
+
+        monthCount = monthCount + 1
+        row = rows[m]
+        revSum = int(row[1]) + revSum
+
+        if m > 1:
+            revDiffernce = revDiffernce + int(row[1]) - int(rows[m-1][1])
+
+        # Max Revenue
+        if int(max_month[1]) < int(row[1]):
+            max_month = row
+        # Min Revenue
+        if int(min_month[1]) > int(row[1]):
+            min_month = row
+
+aveRev = int(revSum / monthCount)
+aveChange = int(revDiffernce / monthCount)
+
+print(monthCount)
+print(revSum)
+print(aveChange)
+print(aveRev)
+
