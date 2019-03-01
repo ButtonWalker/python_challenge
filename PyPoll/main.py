@@ -51,9 +51,6 @@ with open(csvPath, newline='') as csvFile:
 # Create the Text file and Close
 pollResult = open('Election_Results.txt','w')
 
-for cn, vn, vp in zip(canNames, voteNum, votePer):
-    print(cn, vn, vp)
-
 # Printed Values for Results 
 pollResult.writelines(' Election Results \n' +
 '-------------------------\n' +
@@ -62,7 +59,7 @@ f'Total Votes: {voteTal}\n' +
 for pollVal in zip(canNames, voteNum, votePer):
     pollResult.writelines(pollVal[0] + ' : ' + str(pollVal[2]) + '% ('+ str(pollVal[1]) + ') \n')
 pollResult.writelines('-------------------------\n' +
-'Winner: ' +
+'Winner: ' + canNames[0] +
 '\n-------------------------')
 
 # Terminal Results
@@ -71,7 +68,6 @@ pollResult.writelines('-------------------------\n' +
 
 # CLose the Txt File
 pollResult.close()
-
 
 
     
