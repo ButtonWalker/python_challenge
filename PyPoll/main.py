@@ -35,15 +35,29 @@ with open(csvPath, newline='') as csvFile:
     for v in voteNum:
         votePer.append(round(v/voteTal*100,1))
 
+    #combine data to be broken out
+    printData = list(zip(canNames, voteNum,votePer))
+
     # grab the canidates who have recieved votes create a list of them
     canWVotes = canNames[0]
     if len(canNames) > 1:
         for cv in range(1, len(canNames)):
-            canWVotes = canWVotes + "," + canNames[cv]
-    
-    print(canWVotes)
-    
-    print(canNames, voteNum)
+            canWVotes = canWVotes + "," + canNames[cv]   
+
+# Printed Values for Results 
+electResults = (' Election Results \n',
+'-------------------------\n',
+f'Total Votes: {voteTal}\n',
+'--------------------------\n')
+
+# Terminal Results
+myOutput = ' '.join(electResults)
+
+# Create the Text file and Close
+pollResult = open('Election_Results.txt','w')
+
+pollResult.close()
+
 
 
     
