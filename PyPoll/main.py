@@ -14,7 +14,7 @@ with open(csvPath, newline='') as csvFile:
     canNames = []
     voteNum = []
 
-    # pares through dataset find names and count
+    # pares through dataset find names and count using name in Index 2
 
     for row in csvReader:
         voteTal += 1
