@@ -64,7 +64,7 @@ f'Average Change: ${aveRev:.2f}\n',
 finaFile = open('Financial_Analysis.txt','w')
 
 # Write to the file
-finaFile.writelines(' Financial Analysis \n',
+myAnalysis = (' Financial Analysis \n',
 '--------------------\n',
 f'Total Months: {monthCount}\n',
 # formated to have 2 digits trailing
@@ -74,5 +74,7 @@ f'Average Change: ${aveRev:.2f}\n',
 'Greatest Increase:' + ' ' + monthMax + '\n',
 'Greatest Decrease:' + ' ' + monthMin)
 
-# finaFile.close()
+finaFile.writelines(myAnalysis)
+
+finaFile.close()
 
