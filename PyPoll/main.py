@@ -51,7 +51,8 @@ with open(csvPath, newline='') as csvFile:
 # Create the Text file and Close
 pollResult = open('Election_Results.txt','w')
 
-# Printed Values for Results 
+# methid used on pyBank did not work. should have done this one first
+# Printed Values for Results print for loop results was intersting and time consuming.
 pollResult.writelines(' Election Results \n' +
 '-------------------------\n' +
 f'Total Votes: {voteTal}\n' +
@@ -62,11 +63,13 @@ pollResult.writelines('-------------------------\n' +
 'Winner: ' + canNames[0] +
 '\n-------------------------')
 
-# Terminal Results
-# myOutput = ' '.join(electResults)
-# print(str(myOutput))
-
 # CLose the Txt File
+pollResult.close()
+
+# Open file and Read on terminal
+pollResult = open('Election_Results.txt', 'r')
+pollRead = pollResult.read()
+print(pollRead)
 pollResult.close()
 
 
