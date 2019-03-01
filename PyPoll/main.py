@@ -8,13 +8,15 @@ with open(csvPath, newline='') as csvFile:
     # Read the tab delimited file on ,
     csvReader = csv.reader(csvFile, delimiter=',')
 
+    # Skip the Header
+    csvHead = next(csvReader)
+
     # Set Values for canidates name, Vote Count, Poll results
     pollRes = {}
     voteTal = 0
     canNames = []
     voteNum = []
     votePer = []
-
 
     # parse through dataset find names and count using name in Index 2
     for row in csvReader:
@@ -40,6 +42,7 @@ with open(csvPath, newline='') as csvFile:
             canWVotes = canWVotes + "," + canNames[cv]
     
     print(canWVotes)
+    
     print(canNames, voteNum)
 
 
