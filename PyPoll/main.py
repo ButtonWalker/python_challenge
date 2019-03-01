@@ -52,9 +52,12 @@ f'Total Votes: {voteTal}\n',
 
 # Terminal Results
 myOutput = ' '.join(electResults)
+print(str(myOutput))
 
 # Create the Text file and Close
 pollResult = open('Election_Results.txt','w')
+
+pollResult.writelines(electResults)
 
 pollResult.close()
 
