@@ -48,22 +48,6 @@ aveChange = float(revDiffernce / monthCount)
 monthMin = ' '.join(min_month)
 monthMax = ' '.join(max_month)
 
-# Terminal output
-print(' Financial Analysis \n',
-'--------------------\n',
-f'Total Months: {monthCount}\n',
-# formated to have 2 digits trailing
-f'Total Revenue: ${revSum:.2f}\n',
-f'Average Change: ${aveRev:.2f}\n',
-# change format to ensure List read correctly
-'Greatest Increase:' +' '+ monthMax +'\n',
-'Greatest Decrease:' +' '+ monthMin)
-
-
-# Open the analysis file
-finaFile = open('Financial_Analysis.txt','w')
-
-# Write to the file
 myAnalysis = (' Financial Analysis \n',
 '--------------------\n',
 f'Total Months: {monthCount}\n',
@@ -74,6 +58,14 @@ f'Average Change: ${aveRev:.2f}\n',
 'Greatest Increase:' + ' ' + monthMax + '\n',
 'Greatest Decrease:' + ' ' + monthMin)
 
+# Terminal output
+myOutput = ' '.join(myAnalysis)
+print( str(myOutput))
+
+# Open the analysis file
+finaFile = open('Financial_Analysis.txt','w')
+
+# Write to the file
 finaFile.writelines(myAnalysis)
 
 finaFile.close()
