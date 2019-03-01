@@ -8,7 +8,7 @@ with open(csvPath, newline='') as csvFile:
     # Read the tab delimited file on ,
     csvReader = csv.reader(csvFile, delimiter=',')
 
-    # Set Values for Canidates name, Vote Count, Poll results
+    # Set Values for canidates name, Vote Count, Poll results
     pollRes = {}
     voteTal = 0
     canNames = []
@@ -17,7 +17,6 @@ with open(csvPath, newline='') as csvFile:
 
 
     # parse through dataset find names and count using name in Index 2
-
     for row in csvReader:
         voteTal += 1
         if row[2] in pollRes.keys():
@@ -25,7 +24,7 @@ with open(csvPath, newline='') as csvFile:
         else:
             pollRes[row[2]] = 1
 
-    # Cast values from data set parse to canNames and votNum list
+    # Cast values from data set parse to canidates and votNum list
     for key, value in pollRes.items():
         canNames.append(key)
         voteNum.append(value)
@@ -34,7 +33,14 @@ with open(csvPath, newline='') as csvFile:
     for v in voteNum:
         votePer.append(round(v/voteTal*100,1))
 
-    print(votePer)
+    # grab the canidates who have recieved votes create a list of them
+    canWVotes = canNames[0]
+    if len(canNames) > 1:
+        for cv in range(1, len(canNames)):
+            canWVotes = canWVotes + "," + canNames[cv]
+    
+    print(canWVotes)
+    print(canNames, voteNum)
 
 
     
