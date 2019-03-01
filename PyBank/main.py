@@ -49,29 +49,30 @@ monthMin = ' '.join(min_month)
 monthMax = ' '.join(max_month)
 
 # Terminal output
-print(' Financial Analysis ')
-print('--------------------')
-print(f'Total Months: {monthCount}')
+print(' Financial Analysis \n',
+'--------------------\n',
+f'Total Months: {monthCount}\n',
 # formated to have 2 digits trailing
-print(f'Total Revenue: ${revSum:.2f}')
-print(f'Average Change: ${aveRev:.2f}')
+f'Total Revenue: ${revSum:.2f}\n',
+f'Average Change: ${aveRev:.2f}\n',
 # change format to ensure List read correctly
-print('Greatest Increase:' +' '+ monthMax)
-print('Greatest Decrease:' +' '+ monthMin)
+'Greatest Increase:' +' '+ monthMax +'\n',
+'Greatest Decrease:' +' '+ monthMin)
+
 
 # Open the analysis file
 finaFile = open('Financial_Analysis.txt','w')
 
 # Write to the file
-finaFile.write(' Financial Analysis \n')
-finaFile.write('--------------------\n')
-finaFile.write(f'Total Months: {monthCount}\n')
+finaFile.writelines(' Financial Analysis \n',
+'--------------------\n',
+f'Total Months: {monthCount}\n',
 # formated to have 2 digits trailing
-finaFile.write(f'Total Revenue: ${revSum:.2f}\n')
-finaFile.write(f'Average Change: ${aveRev:.2f}\n')
+f'Total Revenue: ${revSum:.2f}\n',
+f'Average Change: ${aveRev:.2f}\n',
 # change format to ensure List read correctly
-finaFile.write('Greatest Increase:' + ' ' + monthMax + '\n')
-finaFile.write('Greatest Decrease:' + ' ' + monthMin)
+'Greatest Increase:' + ' ' + monthMax + '\n',
+'Greatest Decrease:' + ' ' + monthMin)
 
-finaFile.close()
+# finaFile.close()
 
